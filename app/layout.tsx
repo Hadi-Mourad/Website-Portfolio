@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   title: "Hadi Mourad · Actuarial Science Student",
   description:
     "Hadi Mourad — Honours Actuarial Science student at Western University (3.7 GPA, CIA UAP path) seeking an Actuarial Student co-op from May 2027.",
-  icons: { icon: "/logo.png", apple: "/logo.png" },
 };
 
 export default function RootLayout({

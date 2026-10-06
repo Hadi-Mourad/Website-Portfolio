@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { profile } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Hadi Mourad - Resume",
-  icons: { icon: "/logo.png", apple: "/logo.png" },
-};
+  title: "Hadi Mourad - Resume",};
 
 export default function ResumePage() {
   return (
