@@ -1,8 +1,8 @@
-import { Code2, Cpu, Languages, ShieldCheck, Sigma } from "lucide-react";
+import { Activity, Code2, Languages, ShieldCheck, Sigma } from "lucide-react";
 import { skillGroups, spokenLanguages } from "@/lib/data";
 import { Container, SectionHeading } from "./ui";
 
-const icons = { code: Code2, sigma: Sigma, shield: ShieldCheck, cpu: Cpu };
+const icons = { code: Code2, sigma: Sigma, shield: ShieldCheck, activity: Activity };
 
 export default function Skills() {
   return (

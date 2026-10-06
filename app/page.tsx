@@ -4,7 +4,7 @@ import Experience from "@/components/Experience";
 import Leadership from "@/components/Leadership";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
-import Beyond from "@/components/Beyond";
+import Accreditations from "@/components/Accreditations";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { ViewModeProvider } from "@/components/ViewMode";
@@ -19,7 +19,7 @@ export default function Home() {
         <Leadership />
         <Projects />
         <Skills />
-        <Beyond />
+        <Accreditations />
         <Contact />
       </main>
       <Footer />

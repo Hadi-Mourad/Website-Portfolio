@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FileText, Menu, SquareTerminal, X } from "lucide-react";
+import { Menu, SquareTerminal, X } from "lucide-react";
 import { navLinks, profile } from "@/lib/data";
+import { LogoIcon } from "./ui";
 import { useViewMode } from "./ViewMode";
 
 function scrollToSection(event: React.MouseEvent<HTMLAnchorElement>, href: string) {
@@ -116,7 +117,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
             >
-              <FileText className="h-4 w-4" />
+              <LogoIcon className="h-4 w-4" />
               Resume
             </a>
           </li>
@@ -170,7 +171,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-full bg-blue-600 px-4 py-3 text-base font-medium text-white"
               >
-                <FileText className="h-4 w-4" />
+                <LogoIcon className="h-4 w-4" />
                 Resume
               </a>
             </li>

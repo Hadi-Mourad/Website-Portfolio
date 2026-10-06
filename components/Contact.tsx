@@ -66,8 +66,8 @@ export default function Contact() {
             </h2>
             <p className="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg">
               I&apos;m looking for an Actuarial Student co-op or internship starting
-              May 2027, with a particular interest in Canada Life. If you&apos;d like to
-              talk pricing, valuation, or risk, I&apos;d love to hear from you.
+              May 2027. If you&apos;d like to talk pricing, valuation, or risk, I&apos;d
+              love to hear from you.
             </p>
 
             <ul className="mt-10 space-y-4 text-base">

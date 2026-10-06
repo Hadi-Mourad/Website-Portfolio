@@ -1,19 +1,19 @@
 export const profile = {
   name: "Hadi Mourad",
   title: "Actuarial Science Student · CIA UAP Candidate",
-  bio: "Honours Specialization in Actuarial Science student at Western University with a 3.7 GPA and the Western Scholarship of Distinction. I'm pursuing the Canadian Institute of Actuaries (CIA) University Accreditation Program path, beginning ACIA Module 1 in November 2026 on the way to FCIA, and I'm most interested in pricing, valuation, and enterprise risk management.",
+  bio: "Honours Specialization in Actuarial Science student at Western University with a 3.7 GPA and the Western Scholarship of Distinction. I'm pursuing the Canadian Institute of Actuaries (CIA) University Accreditation Program path, taking ACIA Module 1 from November 2026 to April 2027 on the way to FCIA, and I'm most interested in pricing, valuation, and enterprise risk management.",
   target:
-    "Seeking an Actuarial Student co-op/internship at Canada Life — available May 2027 for 4 to 16 months, London-based and able to work on-site.",
+    "Seeking an Actuarial Student co-op/internship — available May 2027 for 4 to 16 months, London-based and able to work on-site.",
   location: "London, ON",
-  email: "Hadimourad1014@gmail.com",
-  linkedin: "https://www.linkedin.com/in/hadi-mourad1014",
-  resume: "/resume.pdf",
+  email: "hadimourad1014@gmail.com",
+  linkedin: "https://www.linkedin.com/in/hadi-mourad1014/",
+  resume: "/Hadi_Mourad_Resume_New.pdf",
 };
 
 export const highlights = [
   { value: "3.7", label: "Cumulative GPA" },
   { value: "Distinction", label: "Western Scholarship" },
-  { value: "Nov 2026", label: "ACIA Module 1 (CIA UAP)" },
+  { value: "Nov 2026 – Apr 2027", label: "ACIA Module 1 (CIA UAP)" },
   { value: "May 2027", label: "Co-op availability" },
 ];
 
@@ -23,7 +23,7 @@ export const navLinks = [
   { label: "Leadership", href: "#leadership" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
-  { label: "Beyond", href: "#beyond" },
+  { label: "Accreditations", href: "#accreditations" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
@@ -98,30 +98,54 @@ export const leadership = [
   },
 ] as const;
 
-export type ProjectType = "statistical" | "design";
+export type ProjectType = "statistical";
 
 export const projects: {
   title: string;
   type: ProjectType;
+  preview: "simulation" | "distribution";
   category: string;
   description: string;
   tags: string[];
+  link?: { href: string; label: string };
+  featured?: boolean;
+  metrics?: { value: string; label: string }[];
 }[] = [
+  {
+    title: "Stochastic ALM & Portfolio Immunization Dashboard",
+    type: "statistical",
+    preview: "simulation",
+    category: "Statistical / Actuarial",
+    description:
+      "Built an interactive web application to perform Redington immunization of a guaranteed-annuity liability ($13.5M PV) against a 3-bond universe. The tool leverages an SLSQP optimizer to minimize cash-flow tracking error while strictly satisfying duration-matching and convexity constraints. To stress-test the immunized surplus, the dashboard runs 2,500 Monte Carlo simulations using Gaussian shift and Vasicek interest-rate models, calculating risk metrics including 95% VaR and TVaR. Integrates financial mathematics, optimization, corporate finance, and statistics into a single comprehensive view.",
+    tags: [
+      "Python",
+      "Streamlit",
+      "Financial Mathematics",
+      "Optimization (SLSQP)",
+      "Monte Carlo",
+      "Asset-Liability Management (ALM)",
+    ],
+    link: {
+      href: "https://actuarial-alm-dashboard-6co58eeep2i8nesyeteubv.streamlit.app/",
+      label: "Open live dashboard",
+    },
+    featured: true,
+    metrics: [
+      { value: "$13.5M", label: "Liability PV" },
+      { value: "3", label: "Bond universe" },
+      { value: "2,500", label: "Monte Carlo paths" },
+      { value: "95%", label: "VaR & TVaR" },
+    ],
+  },
   {
     title: "Actuarial & Statistical Coursework",
     type: "statistical",
+    preview: "distribution",
     category: "Academic Focus · 2026/27",
     description:
       "Mathematics of Finance, Long Term Actuarial Mathematics, Financial Modelling, Financial Markets and Investments, Probability and Statistics I & II, Statistical Programming, and Calculus with Analysis for Statistics.",
     tags: ["Excel", "Python", "R", "Financial Modelling", "Probability"],
-  },
-  {
-    title: "Large-Scale Event Design & Production",
-    type: "design",
-    category: "Design",
-    description:
-      "Designed and formatted large-scale (36×72 inch) wedding seating charts and custom signage for print production, utilizing image gradient fades and precise alignment.",
-    tags: ["Canva", "GIMP", "Graphic Design", "Print Production"],
   },
 ];
 
@@ -132,7 +156,7 @@ export const skillGroups = [
     skills: [
       "Microsoft Excel (data analysis, financial modelling, reconciliation)",
       "Python (object-oriented & statistical programming)",
-      "R / RStudio",
+      "R / RStudio (Enrolled for Winter 2027 via Statistical Programming course)",
       "Canva, GIMP",
     ],
   },
@@ -159,40 +183,74 @@ export const skillGroups = [
     ],
   },
   {
-    title: "Hardware & Systems",
-    icon: "cpu",
+    title: "Risk & Quantitative Methods",
+    icon: "activity",
     skills: [
-      "Windows Desktop Customization (Rainmeter, TranslucentTB)",
-      "Custom PC / Workspace Builds",
+      "Asset-Liability Management (ALM) & Redington Immunization",
+      "Monte Carlo Simulation & Stochastic Modelling",
+      "Sensitivity Analysis & Scenario Testing (VaR / TVaR)",
+      "Cash Flow Reconciliation & Auditing",
     ],
   },
 ] as const;
 
 export const spokenLanguages = "Fluent in both English and Arabic";
 
-export const interests = [
+export type RoadmapStatus = "in-progress" | "upcoming" | "planned" | "goal";
+
+export const roadmap: {
+  title: string;
+  period: string;
+  status: RoadmapStatus;
+  description: string;
+}[] = [
   {
-    icon: "dumbbell",
-    title: "Weightlifting",
+    title: "Honours Specialization in Actuarial Science",
+    period: "2025 – 2029",
+    status: "in-progress",
     description:
-      "Structured training and body recomposition: progressive overload, tracking, and patience.",
+      "Completing the accredited Honours Specialization in Actuarial Science at Western University through the CIA University Accreditation Program (UAP) pathway.",
   },
   {
-    icon: "crosshair",
-    title: "Tactical FPS (CS2)",
+    title: "ACIA Module 1",
+    period: "Nov 2026 – Apr 2027",
+    status: "upcoming",
     description:
-      "Split-second decisions, team coordination, and reading probabilities under pressure.",
+      "First module on the Associate of the Canadian Institute of Actuaries (ACIA) pathway, completed alongside full-time studies.",
   },
   {
-    icon: "grid",
-    title: "Extreme Sudoku",
+    title: "ACIA Module 2",
+    period: "2027 – 2028 (Third Year)",
+    status: "planned",
     description:
-      "Grid deduction puzzles that reward rigorous logic and pattern recognition.",
+      "Applying theoretical knowledge to practical scenarios through graded assignments, predictive analytics, and a comprehensive case study during my third year at Western University.",
   },
   {
-    icon: "trophy",
-    title: "European Football",
+    title: "ACIA Capstone Exam",
+    period: "2029 (Post-Graduation)",
+    status: "planned",
     description:
-      "Following the tactics, stats, and storylines of the top European leagues.",
+      "A comprehensive two-day, open-book examination assessing the integration of actuarial concepts and communication skills across common and specialized tracks, utilizing Microsoft Excel and RStudio.",
   },
-] as const;
+  {
+    title: "CIA Professionalism Workshop",
+    period: "2029",
+    status: "planned",
+    description:
+      "Final prerequisite workshop focusing on business ethics, professional standards of practice, and the legal environment for actuaries in Canada.",
+  },
+  {
+    title: "Associate of the CIA (ACIA)",
+    period: "2029",
+    status: "planned",
+    description:
+      "Attaining the ACIA designation upon the successful completion of Western's UAP-accredited degree, ACIA Modules 1 and 2, the Capstone Exam, and the Professionalism Workshop.",
+  },
+  {
+    title: "Fellow of the CIA (FCIA)",
+    period: "Long-term goal",
+    status: "goal",
+    description:
+      "Fellowship-level specialization in pricing, valuation, and enterprise risk management, culminating in the completion of FCIA modules, fellowship examinations, and practical experience.",
+  },
+];

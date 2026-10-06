@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { LayoutTemplate } from "lucide-react";
-import { experience, interests, leadership, profile, projects, skillGroups, spokenLanguages } from "@/lib/data";
+import { experience, leadership, profile, projects, roadmap, skillGroups, spokenLanguages } from "@/lib/data";
 import { useViewMode } from "./ViewMode";
 
 const PROMPT = "guest@hadi-mourad:~$";
@@ -15,7 +15,7 @@ const COMMANDS: Record<string, string> = {
   leadership: "Leadership & involvement",
   projects: "Projects & coursework",
   skills: "Technical skills",
-  beyond: "Interests outside work",
+  roadmap: "Accreditations & path to FCIA",
   contact: "How to reach me",
   resume: "Open my resume",
   ls: "List files",
@@ -31,7 +31,7 @@ const FILES: Record<string, string> = {
   "leadership.md": "leadership",
   "projects.md": "projects",
   "skills.json": "skills",
-  "beyond.md": "beyond",
+  "roadmap.md": "roadmap",
   "contact.sh": "contact",
   "resume.pdf": "resume",
 };
@@ -144,6 +144,11 @@ export default function TerminalView() {
             </Heading>
             <p className="max-w-3xl text-slate-400">{p.description}</p>
             <p className="mt-1 text-amber-300">[{p.tags.join(", ")}]</p>
+            {p.link && (
+              <a className="mt-1 inline-block text-blue-400 underline" href={p.link.href} target="_blank" rel="noopener noreferrer">
+                {p.link.label} ↗
+              </a>
+            )}
           </div>
         ));
       case "skills":
@@ -166,11 +171,13 @@ export default function TerminalView() {
             {"}"}
           </pre>
         );
-      case "beyond":
-        return interests.map((item) => (
-          <p key={item.title}>
-            <span className="text-blue-400">{item.title.padEnd(20, " ")}</span>
-            <Muted>{item.description}</Muted>
+      case "roadmap":
+        return roadmap.map((step) => (
+          <p key={step.title}>
+            <span className={step.status === "in-progress" || step.status === "upcoming" ? "text-emerald-400" : "text-slate-500"}>
+              [{step.status === "in-progress" || step.status === "upcoming" ? "x" : " "}]
+            </span>{" "}
+            <span className="text-blue-400">{step.title}</span> <Muted>— {step.period}</Muted>
           </p>
         ));
       case "contact":
