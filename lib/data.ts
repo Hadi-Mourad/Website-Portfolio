@@ -3,8 +3,8 @@ export const profile = {
   title: "Actuarial Science Student · CIA UAP Candidate",
   bio: "Honours Specialization in Actuarial Science student at Western University with a 3.7 GPA and the Western Scholarship of Distinction. I'm pursuing the Canadian Institute of Actuaries (CIA) University Accreditation Program path, taking ACIA Module 1 from November 2026 to April 2027 on the way to FCIA, and I'm most interested in pricing, valuation, and enterprise risk management.",
   target:
-    "Seeking an Actuarial Student co-op/internship — available May 2027 for 4 to 16 months, London-based and able to work on-site.",
-  location: "London, ON",
+    "Seeking an Actuarial Student co-op/internship — available May 2027 for 4 to 16 months. Currently London-based, but fully open to relocation (including Toronto/GTA and Ottawa) for on-site or hybrid roles.",
+  location: "London, ON (Open to Relocation)",
   email: "hadimourad1014@gmail.com",
   linkedin: "https://www.linkedin.com/in/hadi-mourad1014/",
   resume: "/Hadi_Mourad_Resume_New.pdf",
