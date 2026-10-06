@@ -190,7 +190,7 @@ export default function TerminalView() {
           </div>
         );
       case "resume":
-        window.open(profile.resume, "_blank", "noopener,noreferrer");
+        window.open(profile.resumePage, "_blank", "noopener,noreferrer");
         return <p>Opening resume.pdf in a new tab…</p>;
       case "ls":
         return (

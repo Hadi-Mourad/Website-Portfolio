@@ -8,6 +8,7 @@ export const profile = {
   email: "hadimourad1014@gmail.com",
   linkedin: "https://www.linkedin.com/in/hadi-mourad1014/",
   resume: "/Hadi_Mourad_Resume_New.pdf",
+  resumePage: "/resume",
 };
 
 export const highlights = [

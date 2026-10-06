@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { ArrowRight, Languages, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Download, Languages, Mail, MapPin } from "lucide-react";
 import { highlights, profile, spokenLanguages } from "@/lib/data";
 import headshot from "@/public/headshot.jpg";
-import { Container, LinkedinIcon, LogoIcon } from "./ui";
+import { Container, LinkedinIcon } from "./ui";
 
 export default function Hero() {
   const quickLinks = [
@@ -10,7 +10,7 @@ export default function Hero() {
     { label: spokenLanguages, icon: Languages },
     { label: "Email", icon: Mail, href: `mailto:${profile.email}` },
     { label: "LinkedIn", icon: LinkedinIcon, href: profile.linkedin, external: true },
-    { label: "Download Resume", icon: LogoIcon, href: profile.resume, download: true },
+    { label: "Download Resume", icon: Download, href: profile.resume, download: "Hadi_Mourad_Resume.pdf" },
   ];
 
   return (
@@ -48,7 +48,7 @@ export default function Hero() {
                     <a
                       href={href}
                       {...(external && { target: "_blank", rel: "noopener noreferrer" })}
-                      {...(download && { download: true })}
+                      {...(download && { download })}
                       className="inline-flex items-center gap-1.5 underline-offset-4 transition-colors hover:text-blue-600 hover:underline"
                     >
                       <Icon className="h-4 w-4" />
