@@ -71,17 +71,17 @@ export default function Navbar() {
         className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6 sm:px-8"
       >
         <a href="#home" onClick={(e) => handleClick(e, "#home")} className="flex items-center gap-3">
-          <span className="text-sm font-semibold tracking-tight text-slate-900">Hadi Mourad</span>
-          <span className="hidden items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[11px] font-medium text-emerald-700 sm:inline-flex">
+          <span className="whitespace-nowrap text-sm font-semibold tracking-tight text-slate-900">Hadi Mourad</span>
+          <span className="hidden items-center gap-1.5 whitespace-nowrap rounded-full sm:max-lg:inline-flex xl:inline-flex border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[11px] font-medium text-emerald-700">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
             </span>
-            Available for opportunities
+            Open to co-op · May 2027
           </span>
         </a>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-0.5 lg:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -128,14 +128,14 @@ export default function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-slate-700 hover:bg-slate-200/60 md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-slate-700 hover:bg-slate-200/60 lg:hidden"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </nav>
 
       {open && (
-        <div id="mobile-menu" className="h-[calc(100dvh-4rem)] border-t border-slate-200 bg-slate-50 md:hidden">
+        <div id="mobile-menu" className="h-[calc(100dvh-4rem)] border-t border-slate-200 bg-slate-50 lg:hidden">
           <ul className="flex flex-col gap-1 px-6 py-6">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -177,7 +177,7 @@ export default function Navbar() {
             <li className="mt-4 flex justify-center">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                Available for opportunities
+                Open to co-op · May 2027
               </span>
             </li>
           </ul>

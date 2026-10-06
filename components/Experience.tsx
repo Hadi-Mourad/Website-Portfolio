@@ -8,7 +8,7 @@ export default function Experience() {
         <SectionHeading
           eyebrow="Experience"
           title="Where I've worked"
-          description="Operational roles where I track, measure, and refine the systems behind day-to-day decisions."
+          description="Roles built on reconciliation, data accuracy, and compliance — the same discipline actuarial work demands."
         />
 
         <ol className="space-y-12">

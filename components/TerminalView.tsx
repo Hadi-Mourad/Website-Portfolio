@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { LayoutTemplate } from "lucide-react";
-import { experience, interests, profile, projects, skillGroups } from "@/lib/data";
+import { experience, interests, leadership, profile, projects, skillGroups, spokenLanguages } from "@/lib/data";
 import { useViewMode } from "./ViewMode";
 
 const PROMPT = "guest@hadi-mourad:~$";
@@ -12,6 +12,7 @@ const COMMANDS: Record<string, string> = {
   help: "List available commands",
   about: "Who I am",
   experience: "Work history",
+  leadership: "Leadership & involvement",
   projects: "Projects & coursework",
   skills: "Technical skills",
   beyond: "Interests outside work",
@@ -27,6 +28,7 @@ const COMMANDS: Record<string, string> = {
 const FILES: Record<string, string> = {
   "about.txt": "about",
   "experience.md": "experience",
+  "leadership.md": "leadership",
   "projects.md": "projects",
   "skills.json": "skills",
   "beyond.md": "beyond",
@@ -101,12 +103,14 @@ export default function TerminalView() {
             <Heading>{profile.name}</Heading>
             <p>{profile.title}</p>
             <p className="mt-2 max-w-2xl text-slate-400">{profile.bio}</p>
+            <p className="mt-2 max-w-2xl text-emerald-400">{profile.target}</p>
             <p className="mt-2"><Muted>location:</Muted> {profile.location}</p>
+            <p><Muted>languages:</Muted> {spokenLanguages}</p>
           </div>
         );
       case "experience":
-        return experience.map((job) => (
-          <div key={job.role}>
+        return experience.map((job, i) => (
+          <div key={job.role} className={i > 0 ? "mt-4" : ""}>
             <Heading>
               {job.role} <Muted>@</Muted> {job.company}
             </Heading>
@@ -120,6 +124,16 @@ export default function TerminalView() {
               ))}
             </ul>
             <p className="mt-2 text-amber-300">[{job.tags.join(", ")}]</p>
+          </div>
+        ));
+      case "leadership":
+        return leadership.map((item, i) => (
+          <div key={item.organization} className={i > 0 ? "mt-4" : ""}>
+            <Heading>
+              {item.role} <Muted>@</Muted> {item.organization}
+            </Heading>
+            <p><Muted>{item.period} · {item.location}</Muted></p>
+            <p className="mt-1 max-w-3xl text-slate-400">{item.description}</p>
           </div>
         ));
       case "projects":

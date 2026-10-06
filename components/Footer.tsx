@@ -3,7 +3,7 @@ import { Container } from "./ui";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-slate-50 py-10">
+    <footer className="border-t border-slate-200 bg-white py-10">
       <Container className="flex flex-col items-center justify-between gap-4 text-sm text-slate-500 sm:flex-row">
         <p>© 2026 Hadi Mourad · Built with Next.js and Tailwind CSS</p>
         <a

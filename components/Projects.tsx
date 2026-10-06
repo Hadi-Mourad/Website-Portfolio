@@ -64,7 +64,7 @@ export default function Projects() {
   const visible = projects.filter((p) => filter === "all" || p.type === filter);
 
   return (
-    <section id="projects" className="border-t border-slate-200 py-24 sm:py-32">
+    <section id="projects" className="border-t border-slate-200 bg-white py-24 sm:py-32">
       <Container>
         <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading

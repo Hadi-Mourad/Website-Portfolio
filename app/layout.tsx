@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Hadi Mourad · Actuarial Science Student",
   description:
-    "Portfolio of Hadi Mourad, an Honours Specialization in Actuarial Science student at Western University.",
+    "Hadi Mourad — Honours Actuarial Science student at Western University (3.7 GPA, CIA UAP path) seeking an Actuarial Student co-op from May 2027.",
 };
 
 export default function RootLayout({

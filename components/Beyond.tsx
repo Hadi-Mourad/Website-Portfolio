@@ -16,7 +16,7 @@ export default function Beyond() {
   const { setMode } = useViewMode();
 
   return (
-    <section id="beyond" className="border-t border-slate-200 py-24 sm:py-32">
+    <section id="beyond" className="border-t border-slate-200 bg-white py-24 sm:py-32">
       <Container>
         <SectionHeading
           eyebrow="Beyond"

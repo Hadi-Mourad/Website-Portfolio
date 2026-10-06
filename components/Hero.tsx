@@ -1,10 +1,13 @@
-import { ArrowRight, Download, Mail, MapPin } from "lucide-react";
-import { profile } from "@/lib/data";
+import Image from "next/image";
+import { ArrowRight, Download, Languages, Mail, MapPin } from "lucide-react";
+import { highlights, profile, spokenLanguages } from "@/lib/data";
+import headshot from "@/public/headshot.jpg";
 import { Container, LinkedinIcon } from "./ui";
 
 export default function Hero() {
   const quickLinks = [
     { label: profile.location, icon: MapPin },
+    { label: spokenLanguages, icon: Languages },
     { label: "Email", icon: Mail, href: `mailto:${profile.email}` },
     { label: "LinkedIn", icon: LinkedinIcon, href: profile.linkedin, external: true },
     { label: "Download Resume", icon: Download, href: profile.resume, download: true },
@@ -25,6 +28,18 @@ export default function Hero() {
             <p className="mt-8 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
               {profile.bio}
             </p>
+            <p className="mt-5 max-w-xl border-l-2 border-blue-600 pl-4 text-sm font-medium leading-relaxed text-slate-800 sm:text-base">
+              {profile.target}
+            </p>
+
+            <dl className="mt-8 grid max-w-xl grid-cols-2 gap-px overflow-hidden rounded-xl border border-slate-200 bg-slate-200 sm:grid-cols-4">
+              {highlights.map((item) => (
+                <div key={item.label} className="bg-white px-4 py-3">
+                  <dt className="text-[11px] font-medium uppercase tracking-wider text-slate-500">{item.label}</dt>
+                  <dd className="mt-1 text-base font-semibold tracking-tight text-slate-900">{item.value}</dd>
+                </div>
+              ))}
+            </dl>
 
             <ul className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-slate-600">
               {quickLinks.map(({ label, icon: Icon, href, external, download }, i) => (
@@ -69,15 +84,19 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Swap this placeholder for <Image src="/headshot.jpg" ... /> from next/image. */}
           <div className="order-1 md:order-2">
-            <div className="relative mx-auto h-48 w-48 sm:h-60 sm:w-60 md:h-72 md:w-72">
+            <div className="relative mx-auto aspect-[3/4] w-48 sm:w-56 md:w-64 lg:w-72">
               <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-3xl border border-blue-200" />
-              <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-slate-100 to-slate-200">
-                <span className="text-6xl font-semibold tracking-tight text-slate-400 sm:text-7xl">HM</span>
-                <span className="mt-2 text-xs font-medium uppercase tracking-widest text-slate-400">
-                  Headshot
-                </span>
+              <div className="relative h-full w-full overflow-hidden rounded-3xl bg-slate-200 shadow-[0_12px_40px_rgb(15,23,42,0.12)]">
+                <Image
+                  src={headshot}
+                  alt={`Portrait of ${profile.name}`}
+                  fill
+                  priority
+                  placeholder="blur"
+                  sizes="(min-width: 1024px) 288px, (min-width: 768px) 256px, (min-width: 640px) 224px, 192px"
+                  className="object-cover object-top"
+                />
               </div>
             </div>
           </div>

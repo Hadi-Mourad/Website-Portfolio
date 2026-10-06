@@ -54,7 +54,7 @@ export default function Contact() {
     errors[field] ? "border-red-400" : "border-slate-200";
 
   return (
-    <section id="contact" className="border-t border-slate-200 bg-white py-24 sm:py-32">
+    <section id="contact" className="border-t border-slate-200 py-24 sm:py-32">
       <Container>
         <div className="grid gap-16 md:grid-cols-[1fr_1.3fr]">
           <div>
@@ -65,8 +65,9 @@ export default function Contact() {
               Get in touch
             </h2>
             <p className="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg">
-              Whether it&apos;s an internship, a project, or just a conversation about
-              actuarial science, I&apos;d love to hear from you.
+              I&apos;m looking for an Actuarial Student co-op or internship starting
+              May 2027, with a particular interest in Canada Life. If you&apos;d like to
+              talk pricing, valuation, or risk, I&apos;d love to hear from you.
             </p>
 
             <ul className="mt-10 space-y-4 text-base">
@@ -100,7 +101,7 @@ export default function Contact() {
           <form
             onSubmit={handleSubmit}
             noValidate
-            className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8"
+            className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8"
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
