@@ -3,12 +3,12 @@ import { Container, SectionHeading, Tag } from "./ui";
 
 export default function Experience() {
   return (
-    <section id="experience" className="border-t border-neutral-200 bg-neutral-50 py-24 sm:py-32">
+    <section id="experience" className="border-t border-slate-200 bg-white py-24 sm:py-32">
       <Container>
         <SectionHeading
           eyebrow="Experience"
           title="Where I've worked"
-          description="Hands-on roles that sharpened my reliability, communication, and attention to detail."
+          description="Operational roles where I track, measure, and refine the systems behind day-to-day decisions."
         />
 
         <ol className="space-y-12">
@@ -17,21 +17,19 @@ export default function Experience() {
               key={`${job.company}-${job.role}`}
               className="grid gap-4 md:grid-cols-[200px_1fr] md:gap-12"
             >
-              <div className="text-sm text-neutral-500">
-                <p className="font-medium text-neutral-900 md:text-neutral-500">{job.period}</p>
+              <div className="text-sm text-slate-500">
+                <p className="font-medium text-slate-900 md:text-slate-500">{job.period}</p>
                 <p className="mt-1">{job.location}</p>
               </div>
 
-              <article>
-                <h3 className="text-xl font-semibold tracking-tight text-neutral-900">
-                  {job.role}
-                </h3>
-                <p className="mt-1 text-base text-neutral-600">{job.company}</p>
+              <article className="border-l-2 border-blue-600 pl-6">
+                <h3 className="text-xl font-semibold tracking-tight text-slate-900">{job.role}</h3>
+                <p className="mt-1 text-base text-slate-600">{job.company}</p>
 
                 <ul className="mt-5 space-y-2.5">
                   {job.bullets.map((bullet) => (
-                    <li key={bullet} className="flex gap-3 text-base leading-relaxed text-neutral-600">
-                      <span aria-hidden="true" className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-neutral-400" />
+                    <li key={bullet} className="flex gap-3 text-base leading-relaxed text-slate-600">
+                      <span aria-hidden="true" className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-blue-600" />
                       {bullet}
                     </li>
                   ))}

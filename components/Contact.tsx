@@ -9,7 +9,7 @@ type Status = "idle" | "sending" | "sent";
 type Errors = Partial<Record<"name" | "email" | "message", string>>;
 
 const inputClass =
-  "w-full rounded-xl border bg-white px-4 py-3 text-base text-neutral-900 placeholder:text-neutral-400 transition-colors focus:border-neutral-900 focus:outline-none focus:ring-4 focus:ring-neutral-900/5";
+  "w-full rounded-xl border bg-white px-4 py-3 text-base text-slate-900 placeholder:text-slate-400 transition-colors focus:border-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-600/10";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -51,20 +51,20 @@ export default function Contact() {
     };
 
   const fieldBorder = (field: keyof Errors) =>
-    errors[field] ? "border-red-400" : "border-neutral-200";
+    errors[field] ? "border-red-400" : "border-slate-200";
 
   return (
-    <section id="contact" className="border-t border-neutral-200 bg-neutral-50 py-24 sm:py-32">
+    <section id="contact" className="border-t border-slate-200 bg-white py-24 sm:py-32">
       <Container>
         <div className="grid gap-16 md:grid-cols-[1fr_1.3fr]">
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
               Contact
             </p>
-            <h2 className="text-4xl font-semibold tracking-tight text-neutral-900 sm:text-5xl">
+            <h2 className="text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
               Get in touch
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-neutral-600 sm:text-lg">
+            <p className="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg">
               Whether it&apos;s an internship, a project, or just a conversation about
               actuarial science, I&apos;d love to hear from you.
             </p>
@@ -73,9 +73,9 @@ export default function Contact() {
               <li>
                 <a
                   href={`mailto:${profile.email}`}
-                  className="inline-flex items-center gap-3 text-neutral-700 transition-colors hover:text-neutral-900"
+                  className="inline-flex items-center gap-3 text-slate-700 transition-colors hover:text-blue-600"
                 >
-                  <Mail className="h-5 w-5 text-neutral-400" />
+                  <Mail className="h-5 w-5 text-slate-400" />
                   {profile.email}
                 </a>
               </li>
@@ -84,14 +84,14 @@ export default function Contact() {
                   href={profile.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-neutral-700 transition-colors hover:text-neutral-900"
+                  className="inline-flex items-center gap-3 text-slate-700 transition-colors hover:text-blue-600"
                 >
-                  <LinkedinIcon className="h-5 w-5 text-neutral-400" />
+                  <LinkedinIcon className="h-5 w-5 text-slate-400" />
                   LinkedIn
                 </a>
               </li>
-              <li className="inline-flex items-center gap-3 text-neutral-700">
-                <MapPin className="h-5 w-5 text-neutral-400" />
+              <li className="inline-flex items-center gap-3 text-slate-700">
+                <MapPin className="h-5 w-5 text-slate-400" />
                 {profile.location}
               </li>
             </ul>
@@ -100,11 +100,11 @@ export default function Contact() {
           <form
             onSubmit={handleSubmit}
             noValidate
-            className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8"
+            className="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8"
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="name" className="mb-2 block text-sm font-medium text-neutral-900">
+                <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-900">
                   Name
                 </label>
                 <input
@@ -124,7 +124,7 @@ export default function Contact() {
                 )}
               </div>
               <div>
-                <label htmlFor="email" className="mb-2 block text-sm font-medium text-neutral-900">
+                <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-900">
                   Email
                 </label>
                 <input
@@ -146,7 +146,7 @@ export default function Contact() {
             </div>
 
             <div className="mt-5">
-              <label htmlFor="message" className="mb-2 block text-sm font-medium text-neutral-900">
+              <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-900">
                 Message
               </label>
               <textarea
@@ -166,14 +166,14 @@ export default function Contact() {
             </div>
 
             <div className="mt-6 flex flex-col-reverse gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <p className="inline-flex items-center gap-2 text-sm text-neutral-500">
+              <p className="inline-flex items-center gap-2 text-sm text-slate-500">
                 <Clock className="h-4 w-4" />
                 I typically reply within one business day.
               </p>
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-700 disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {status === "sending" ? "Sending…" : "Send message"}
                 <Send className="h-4 w-4" />

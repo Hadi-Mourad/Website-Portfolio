@@ -25,28 +25,44 @@ export const experience = [
     location: "London, ON",
     period: "Present",
     bullets: [
-      "Manage daily store operations in a fast-paced retail environment.",
-      "Assist customers with product selection, questions, and special requests.",
-      "Ensure quality control across product handling, display, and freshness standards.",
+      "Track inventory levels and stock rotation across perishable and dry goods, flagging shortfalls early to minimize spoilage and waste.",
+      "Observe daily and weekly demand patterns to anticipate high-volume periods and inform restocking and ordering decisions.",
+      "Identify bottlenecks in restocking, prep, and checkout workflows, adjusting task order to keep peak-hour operations running smoothly.",
+      "Apply consistent quality-control checks on product freshness, handling, and display to maintain food-safety standards.",
     ],
-    tags: ["Customer Relations", "Operations", "Teamwork"],
+    tags: [
+      "Inventory Tracking",
+      "Demand Patterns",
+      "Process Optimization",
+      "Quality Control",
+    ],
   },
 ];
 
-export const projects = [
-  {
-    title: "Large-Scale Event Design & Production",
-    category: "Design",
-    description:
-      "Designed and formatted large-scale (36×72 inch) wedding seating charts and custom signage for print production, utilizing image gradient fades and precise alignment.",
-    tags: ["Canva", "GIMP", "Graphic Design", "Print Production"],
-  },
+export type ProjectType = "statistical" | "design";
+
+export const projects: {
+  title: string;
+  type: ProjectType;
+  category: string;
+  description: string;
+  tags: string[];
+}[] = [
   {
     title: "Actuarial & Statistical Computing",
+    type: "statistical",
     category: "Academic Focus",
     description:
       "Applying advanced mathematical concepts through coursework in Financial Modelling, Probability and Statistics, and Calculus with Analysis for Statistics.",
     tags: ["R", "RStudio", "Statistical Analysis", "Data Modeling"],
+  },
+  {
+    title: "Large-Scale Event Design & Production",
+    type: "design",
+    category: "Design",
+    description:
+      "Designed and formatted large-scale (36×72 inch) wedding seating charts and custom signage for print production, utilizing image gradient fades and precise alignment.",
+    tags: ["Canva", "GIMP", "Graphic Design", "Print Production"],
   },
 ];
 

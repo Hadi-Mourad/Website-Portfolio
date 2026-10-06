@@ -6,10 +6,11 @@ import Skills from "@/components/Skills";
 import Beyond from "@/components/Beyond";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { ViewModeProvider } from "@/components/ViewMode";
 
 export default function Home() {
   return (
-    <>
+    <ViewModeProvider>
       <Navbar />
       <main>
         <Hero />
@@ -20,6 +21,6 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </ViewModeProvider>
   );
 }

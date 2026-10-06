@@ -2,6 +2,7 @@
 
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
 html {
@@ -15,11 +16,11 @@ html {
 }
 
 body {
-  @apply bg-white text-neutral-900 antialiased;
+  @apply bg-slate-50 text-slate-900 antialiased;
 }
 
 ::selection {
-  @apply bg-neutral-900 text-white;
+  @apply bg-blue-600 text-white;
 }
 
 /* Offset anchored sections so the sticky nav doesn't cover headings. */

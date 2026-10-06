@@ -2,7 +2,7 @@ import type { SVGProps } from "react";
 
 export function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs font-medium text-neutral-700">
+    <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700">
       {children}
     </span>
   );
@@ -12,21 +12,23 @@ export function SectionHeading({
   eyebrow,
   title,
   description,
+  className = "mb-12",
 }: {
   eyebrow: string;
   title: string;
   description?: string;
+  className?: string;
 }) {
   return (
-    <div className="mb-12 max-w-2xl">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">
+    <div className={`max-w-2xl ${className}`}>
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
         {eyebrow}
       </p>
-      <h2 className="text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
+      <h2 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-base leading-relaxed text-neutral-600">
+        <p className="mt-4 text-base leading-relaxed text-slate-600">
           {description}
         </p>
       )}
