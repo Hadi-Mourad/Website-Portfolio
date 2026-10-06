@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { FileText, Menu, SquareTerminal, X } from "lucide-react";
 import { navLinks, profile } from "@/lib/data";
 import { useViewMode } from "./ViewMode";
+import monogram from "@/public/hm-monogram.png";
 
 function scrollToSection(event: React.MouseEvent<HTMLAnchorElement>, href: string) {
   if (!href.startsWith("#")) return;
@@ -71,8 +73,11 @@ export default function Navbar() {
         className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6 sm:px-8"
       >
         <a href="#home" onClick={(e) => handleClick(e, "#home")} className="flex items-center gap-3">
-          <span className="whitespace-nowrap text-sm font-semibold tracking-tight text-slate-900">Hadi Mourad</span>
-          <span className="hidden items-center gap-1.5 whitespace-nowrap rounded-full sm:max-lg:inline-flex xl:inline-flex border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[11px] font-medium text-emerald-700">
+          <span className="flex shrink-0 items-center gap-2">
+            <Image src={monogram} alt="" priority className="h-8 w-auto" />
+            <span className="whitespace-nowrap text-sm font-semibold tracking-tight text-slate-900">Hadi Mourad</span>
+          </span>
+          <span className="hidden items-center gap-1.5 whitespace-nowrap rounded-full sm:max-lg:inline-flex border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[11px] font-medium text-emerald-700">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />

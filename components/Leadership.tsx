@@ -1,8 +1,6 @@
-import { BarChart3, Briefcase, Star, Users } from "lucide-react";
+import { Star } from "lucide-react";
 import { leadership } from "@/lib/data";
 import { Container, SectionHeading } from "./ui";
-
-const icons = { briefcase: Briefcase, chart: BarChart3, users: Users };
 
 export default function Leadership() {
   return (
@@ -16,7 +14,6 @@ export default function Leadership() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {leadership.map((item) => {
-            const Icon = icons[item.icon];
             return (
               <article
                 key={item.organization}
@@ -25,13 +22,7 @@ export default function Leadership() {
                 }`}
               >
                 <div className="mb-5 flex items-center justify-between">
-                  <span
-                    className={`flex h-11 w-11 items-center justify-center rounded-xl ${
-                      item.featured ? "bg-blue-600 text-white" : "bg-blue-50 text-blue-600"
-                    }`}
-                  >
-                    <Icon className="h-5 w-5" />
-                  </span>
+                  <img src={item.logo} alt={`${item.organization} logo`} className="h-10 w-auto object-contain" />
                   {item.featured ? (
                     <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700">
                       <Star className="h-3 w-3" />

@@ -66,9 +66,10 @@ export const experience = [
   },
 ];
 
+// Logo paths point to files in /public — make sure each filename matches exactly what you upload there (case-sensitive on Vercel).
 export const leadership = [
   {
-    icon: "briefcase",
+    logo: "/canada-life.png",
     role: "Attendee",
     organization: "Canada Life “Actuary for a Day”",
     location: "London, ON",
@@ -78,17 +79,17 @@ export const leadership = [
     featured: true,
   },
   {
-    icon: "chart",
+    logo: "/asua.png",
     role: "Member",
     organization: "Actuarial and Statistical Undergraduate Association (ASUA)",
     location: "Western University",
-    period: "2026 – 2027",
+    period: "2026 – Present",
     description:
       "Attend networking events, workshops, and actuarial industry panels to build knowledge of the profession.",
     featured: false,
   },
   {
-    icon: "users",
+    logo: "/lsa.png",
     role: "Externals Manager",
     organization: "Lebanese Student Association (LSA)",
     location: "Western University",
